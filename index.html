@@ -113,7 +113,7 @@
 
         .btn-launch {
             background: linear-gradient(135deg, var(--emerald-500), var(--emerald-600));
-            color: white;
+            color: white !important;
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
@@ -258,14 +258,8 @@
             border-color: rgba(255,255,255,0.25);
         }
 
-        /* Phone Mockups */
-        .hero-phones {
-            position: relative;
-            height: 600px;
-        }
-
+        /* Phone Mockup Base Styles */
         .phone {
-            position: absolute;
             width: 280px;
             background: var(--zinc-900);
             border-radius: 40px;
@@ -279,20 +273,6 @@
             border-radius: 32px;
             overflow: hidden;
             aspect-ratio: 9/19;
-        }
-
-        .phone-1 {
-            top: 0;
-            right: 20%;
-            transform: rotate(-5deg);
-            z-index: 2;
-        }
-
-        .phone-2 {
-            top: 80px;
-            right: 0;
-            transform: rotate(8deg);
-            z-index: 1;
         }
 
         .phone-notch {
@@ -321,6 +301,28 @@
         .phone-header p {
             font-size: 0.75rem;
             color: var(--zinc-500);
+        }
+
+        /* Hero Phones */
+        .hero-phones {
+            position: relative;
+            height: 600px;
+        }
+
+        .hero-phones .phone-1 {
+            position: absolute;
+            top: 0;
+            right: 20%;
+            transform: rotate(-5deg);
+            z-index: 2;
+        }
+
+        .hero-phones .phone-2 {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            transform: rotate(8deg);
+            z-index: 1;
         }
 
         .phone-stat-grid {
@@ -392,73 +394,13 @@
             color: var(--emerald-400);
         }
 
-        .phone-transaction {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--zinc-600);
-        }
-
-        .phone-transaction:last-child {
-            border-bottom: none;
-        }
-
-        .phone-transaction-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .phone-transaction-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--zinc-600);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-        }
-
-        .phone-transaction-icon.matched {
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--emerald-400);
-        }
-
-        .phone-transaction-details h5 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .phone-transaction-details p {
-            font-size: 0.65rem;
-            color: var(--zinc-500);
-        }
-
-        .phone-transaction-amount {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--emerald-400);
-        }
-
-        .match-badge {
-            background: var(--emerald-500);
-            color: white;
-            font-size: 0.6rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 8rem 2rem;
+        /* App Showcase Section */
+        .app-showcase {
+            padding: 6rem 2rem;
             background: linear-gradient(180deg, var(--zinc-950) 0%, var(--zinc-900) 100%);
         }
 
-        .section-header {
+        .showcase-header {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 4rem;
@@ -473,6 +415,484 @@
             font-size: 0.875rem;
             font-weight: 600;
             margin-bottom: 1rem;
+        }
+
+        .showcase-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-header p {
+            font-size: 1.1rem;
+            color: var(--zinc-400);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .showcase-item {
+            text-align: center;
+        }
+
+        .showcase-item .phone {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 1.5rem;
+            transform: scale(0.95);
+            transition: transform 0.3s;
+        }
+
+        .showcase-item:hover .phone {
+            transform: scale(1);
+        }
+
+        .showcase-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-item p {
+            font-size: 0.9rem;
+            color: var(--zinc-400);
+        }
+
+        /* Dashboard Phone Content */
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .dash-stat {
+            background: linear-gradient(135deg, var(--emerald-600), var(--emerald-700));
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .dash-stat.secondary {
+            background: var(--zinc-700);
+        }
+
+        .dash-stat-value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .dash-stat-label {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dash-stat.secondary .dash-stat-label {
+            color: var(--zinc-400);
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .quick-action {
+            background: var(--zinc-700);
+            padding: 10px 6px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .quick-action i {
+            font-size: 1.1rem;
+            color: var(--emerald-400);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .quick-action span {
+            font-size: 0.6rem;
+            color: var(--zinc-400);
+        }
+
+        .upcoming-job {
+            background: var(--zinc-700);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .job-time {
+            background: var(--emerald-500);
+            color: white;
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .job-time span {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .job-details h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .job-details p {
+            font-size: 0.65rem;
+            color: var(--zinc-400);
+        }
+
+        /* Route Phone Content */
+        .route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .route-header h3 {
+            font-size: 0.9rem;
+        }
+
+        .route-badge {
+            background: var(--emerald-500);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        .route-stats {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .route-stat {
+            flex: 1;
+            background: var(--zinc-700);
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .route-stat i {
+            color: var(--emerald-400);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .route-stat-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .route-stat-label {
+            font-size: 0.55rem;
+            color: var(--zinc-500);
+        }
+
+        .route-stop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--zinc-700);
+        }
+
+        .route-stop:last-child {
+            border-bottom: none;
+        }
+
+        .stop-number {
+            width: 24px;
+            height: 24px;
+            background: var(--emerald-500);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .stop-number.completed {
+            background: var(--zinc-600);
+        }
+
+        .stop-info h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .stop-info p {
+            font-size: 0.65rem;
+            color: var(--zinc-500);
+        }
+
+        .stop-status {
+            margin-left: auto;
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .stop-status.done {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald-400);
+        }
+
+        .stop-status.next {
+            background: var(--emerald-500);
+            color: white;
+        }
+
+        /* Map Phone Content */
+        .map-container {
+            background: var(--zinc-700);
+            border-radius: 12px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .map-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .map-roads {
+            position: absolute;
+            inset: 0;
+        }
+
+        .map-road {
+            position: absolute;
+            background: var(--zinc-600);
+            border-radius: 2px;
+        }
+
+        .map-road.h1 { top: 30%; left: 10%; width: 80%; height: 3px; }
+        .map-road.h2 { top: 60%; left: 5%; width: 70%; height: 3px; }
+        .map-road.h3 { top: 80%; left: 20%; width: 60%; height: 3px; }
+        .map-road.v1 { top: 10%; left: 25%; width: 3px; height: 80%; }
+        .map-road.v2 { top: 20%; left: 55%; width: 3px; height: 70%; }
+        .map-road.v3 { top: 5%; left: 80%; width: 3px; height: 85%; }
+
+        .map-pin {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--emerald-500);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.5);
+        }
+
+        .map-pin::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .map-pin.completed {
+            background: var(--zinc-500);
+            box-shadow: none;
+        }
+
+        .map-pin.current {
+            background: #3b82f6;
+            animation: pulse-pin 2s infinite;
+        }
+
+        @keyframes pulse-pin {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+        }
+
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.6rem;
+            color: var(--zinc-400);
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.done { background: var(--zinc-500); }
+        .legend-dot.pending { background: var(--emerald-500); }
+        .legend-dot.current { background: #3b82f6; }
+
+        .map-summary {
+            background: var(--zinc-700);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .map-summary-item {
+            text-align: center;
+        }
+
+        .map-summary-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .map-summary-label {
+            font-size: 0.55rem;
+            color: var(--zinc-500);
+        }
+
+        /* Planner Phone Content */
+        .planner-week {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .planner-day {
+            flex: 1;
+            background: var(--zinc-700);
+            border-radius: 8px;
+            padding: 6px 2px;
+            text-align: center;
+        }
+
+        .planner-day.active {
+            background: var(--emerald-500);
+        }
+
+        .planner-day-name {
+            font-size: 0.55rem;
+            color: var(--zinc-400);
+            margin-bottom: 2px;
+        }
+
+        .planner-day.active .planner-day-name {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .planner-day-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .planner-day-jobs {
+            font-size: 0.5rem;
+            color: var(--emerald-400);
+            margin-top: 2px;
+        }
+
+        .planner-day.active .planner-day-jobs {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .time-slots {
+            position: relative;
+        }
+
+        .time-slot {
+            display: flex;
+            margin-bottom: 4px;
+        }
+
+        .time-label {
+            width: 35px;
+            font-size: 0.6rem;
+            color: var(--zinc-500);
+            padding-top: 4px;
+        }
+
+        .slot-content {
+            flex: 1;
+            min-height: 36px;
+            border-left: 2px solid var(--zinc-700);
+            padding-left: 8px;
+        }
+
+        .slot-job {
+            background: linear-gradient(135deg, var(--emerald-600), var(--emerald-700));
+            border-radius: 6px;
+            padding: 6px 8px;
+            margin-bottom: 4px;
+        }
+
+        .slot-job h5 {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .slot-job p {
+            font-size: 0.55rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 2rem;
+            background: var(--zinc-950);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
         }
 
         .section-header h2 {
@@ -536,7 +956,7 @@
         /* Industries Section */
         .industries {
             padding: 8rem 2rem;
-            background: var(--zinc-950);
+            background: linear-gradient(180deg, var(--zinc-950) 0%, var(--zinc-900) 100%);
         }
 
         .industries-grid {
@@ -574,7 +994,7 @@
         /* Smart Payments Section */
         .smart-payments {
             padding: 8rem 2rem;
-            background: linear-gradient(180deg, var(--zinc-950) 0%, var(--zinc-900) 50%, var(--zinc-950) 100%);
+            background: var(--zinc-950);
         }
 
         .smart-payments-container {
@@ -592,7 +1012,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .smart-payments-content p {
+        .smart-payments-content > p {
             color: var(--zinc-400);
             font-size: 1.1rem;
             margin-bottom: 2rem;
@@ -649,7 +1069,7 @@
             font-weight: 500;
         }
 
-        /* Demo Visual */
+        /* Demo Card */
         .demo-visual {
             position: relative;
         }
@@ -754,7 +1174,7 @@
         .cta {
             padding: 8rem 2rem;
             text-align: center;
-            background: linear-gradient(180deg, var(--zinc-950) 0%, var(--zinc-900) 100%);
+            background: linear-gradient(180deg, var(--zinc-900) 0%, var(--zinc-950) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -818,7 +1238,13 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Responsive */
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -864,6 +1290,11 @@
                 padding: 6rem 1rem 3rem;
             }
 
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -891,6 +1322,7 @@
                 StreakFree
             </a>
             <div class="nav-links">
+                <a href="#showcase">App Tour</a>
                 <a href="#features">Features</a>
                 <a href="#industries">Industries</a>
                 <a href="#payments">Smart Payments</a>
@@ -910,15 +1342,15 @@
                     <span class="badge"><i class="fas fa-check"></i> Smart Scheduling</span>
                     <span class="badge"><i class="fas fa-check"></i> Auto Payment Matching</span>
                     <span class="badge"><i class="fas fa-check"></i> Bank Integration</span>
-                    <span class="badge"><i class="fas fa-check"></i> Customer Portal</span>
+                    <span class="badge"><i class="fas fa-check"></i> Route Optimisation</span>
                 </div>
 
                 <div class="hero-cta">
                     <a href="https://app.streakfree.app" class="btn-primary">
                         Get Started Free <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#features" class="btn-secondary">
-                        <i class="fas fa-play-circle"></i> See How It Works
+                    <a href="#showcase" class="btn-secondary">
+                        <i class="fas fa-mobile-screen"></i> See the App
                     </a>
                 </div>
             </div>
@@ -967,54 +1399,318 @@
                     </div>
                 </div>
 
-                <!-- Phone 2 - Payment Matching -->
+                <!-- Phone 2 - Route -->
                 <div class="phone phone-2">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
                         <div class="phone-content">
-                            <div class="phone-header">
-                                <h3>Smart Match</h3>
-                                <p>3 payments found</p>
+                            <div class="route-header">
+                                <h3>Today's Route</h3>
+                                <span class="route-badge">OPTIMISED</span>
                             </div>
-                            <div class="phone-transaction">
-                                <div class="phone-transaction-left">
-                                    <div class="phone-transaction-icon matched">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <div class="phone-transaction-details">
-                                        <h5>J DAVIDSON</h5>
-                                        <p><span class="match-badge">AUTO MATCHED</span></p>
-                                    </div>
+                            <div class="route-stats">
+                                <div class="route-stat">
+                                    <i class="fas fa-route"></i>
+                                    <div class="route-stat-value">23mi</div>
+                                    <div class="route-stat-label">Total</div>
                                 </div>
-                                <div class="phone-transaction-amount">£45.00</div>
+                                <div class="route-stat">
+                                    <i class="fas fa-clock"></i>
+                                    <div class="route-stat-value">4.5h</div>
+                                    <div class="route-stat-label">Drive Time</div>
+                                </div>
                             </div>
-                            <div class="phone-transaction">
-                                <div class="phone-transaction-left">
-                                    <div class="phone-transaction-icon matched">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <div class="phone-transaction-details">
-                                        <h5>S MITCHELL</h5>
-                                        <p><span class="match-badge">LEARNED</span></p>
-                                    </div>
+                            <div class="route-stop">
+                                <div class="stop-number completed">1</div>
+                                <div class="stop-info">
+                                    <h4>J. Davidson</h4>
+                                    <p>12 Oak Lane</p>
                                 </div>
-                                <div class="phone-transaction-amount">£65.00</div>
+                                <span class="stop-status done">Done</span>
                             </div>
-                            <div class="phone-transaction">
-                                <div class="phone-transaction-left">
-                                    <div class="phone-transaction-icon">
-                                        <i class="fas fa-question"></i>
-                                    </div>
-                                    <div class="phone-transaction-details">
-                                        <h5>ACME LTD</h5>
-                                        <p>Review needed</p>
-                                    </div>
+                            <div class="route-stop">
+                                <div class="stop-number">2</div>
+                                <div class="stop-info">
+                                    <h4>S. Mitchell</h4>
+                                    <p>45 High Street</p>
                                 </div>
-                                <div class="phone-transaction-amount">£120.00</div>
+                                <span class="stop-status next">Next</span>
+                            </div>
+                            <div class="route-stop">
+                                <div class="stop-number">3</div>
+                                <div class="stop-info">
+                                    <h4>R. Thompson</h4>
+                                    <p>8 Church Road</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section class="app-showcase" id="showcase">
+        <div class="showcase-header">
+            <span class="section-label">App Tour</span>
+            <h2>Everything at your fingertips</h2>
+            <p>From your morning dashboard to end-of-day reconciliation - see how StreakFree keeps your business running smoothly.</p>
+        </div>
+
+        <div class="showcase-grid">
+            <!-- Dashboard Phone -->
+            <div class="showcase-item">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-content">
+                            <div class="phone-header">
+                                <h3><i class="fas fa-home" style="color: var(--emerald-400); margin-right: 6px;"></i>Dashboard</h3>
+                            </div>
+                            <div class="dashboard-stats">
+                                <div class="dash-stat">
+                                    <div class="dash-stat-value">12</div>
+                                    <div class="dash-stat-label">Jobs Today</div>
+                                </div>
+                                <div class="dash-stat">
+                                    <div class="dash-stat-value">£2,847</div>
+                                    <div class="dash-stat-label">This Week</div>
+                                </div>
+                                <div class="dash-stat secondary">
+                                    <div class="dash-stat-value">3</div>
+                                    <div class="dash-stat-label">Overdue</div>
+                                </div>
+                                <div class="dash-stat secondary">
+                                    <div class="dash-stat-value">98%</div>
+                                    <div class="dash-stat-label">Collected</div>
+                                </div>
+                            </div>
+                            <div class="quick-actions">
+                                <div class="quick-action">
+                                    <i class="fas fa-plus"></i>
+                                    <span>New Job</span>
+                                </div>
+                                <div class="quick-action">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span>Customer</span>
+                                </div>
+                                <div class="quick-action">
+                                    <i class="fas fa-receipt"></i>
+                                    <span>Payment</span>
+                                </div>
+                            </div>
+                            <div class="upcoming-job">
+                                <div class="job-time">9:30<span>AM</span></div>
+                                <div class="job-details">
+                                    <h4>John Davidson</h4>
+                                    <p>12 Oak Lane - £45.00</p>
+                                </div>
+                            </div>
+                            <div class="upcoming-job">
+                                <div class="job-time">11:00<span>AM</span></div>
+                                <div class="job-details">
+                                    <h4>Sarah Mitchell</h4>
+                                    <p>45 High Street - £65.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Home Dashboard</h3>
+                <p>Your day at a glance - jobs, earnings, and quick actions</p>
+            </div>
+
+            <!-- Route Phone -->
+            <div class="showcase-item">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-content">
+                            <div class="route-header">
+                                <h3><i class="fas fa-route" style="color: var(--emerald-400); margin-right: 6px;"></i>Route</h3>
+                                <span class="route-badge">OPTIMISED</span>
+                            </div>
+                            <div class="route-stats">
+                                <div class="route-stat">
+                                    <i class="fas fa-road"></i>
+                                    <div class="route-stat-value">23mi</div>
+                                    <div class="route-stat-label">Distance</div>
+                                </div>
+                                <div class="route-stat">
+                                    <i class="fas fa-clock"></i>
+                                    <div class="route-stat-value">52min</div>
+                                    <div class="route-stat-label">Drive</div>
+                                </div>
+                                <div class="route-stat">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <div class="route-stat-value">£8.40</div>
+                                    <div class="route-stat-label">Fuel</div>
+                                </div>
+                            </div>
+                            <div class="route-stop">
+                                <div class="stop-number completed">1</div>
+                                <div class="stop-info">
+                                    <h4>J. Davidson</h4>
+                                    <p>12 Oak Lane</p>
+                                </div>
+                                <span class="stop-status done"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="route-stop">
+                                <div class="stop-number completed">2</div>
+                                <div class="stop-info">
+                                    <h4>P. Wilson</h4>
+                                    <p>3 Park Ave</p>
+                                </div>
+                                <span class="stop-status done"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="route-stop">
+                                <div class="stop-number">3</div>
+                                <div class="stop-info">
+                                    <h4>S. Mitchell</h4>
+                                    <p>45 High St</p>
+                                </div>
+                                <span class="stop-status next">NEXT</span>
+                            </div>
+                            <div class="route-stop">
+                                <div class="stop-number">4</div>
+                                <div class="stop-info">
+                                    <h4>R. Thompson</h4>
+                                    <p>8 Church Rd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Optimised Routes</h3>
+                <p>Save fuel and time with intelligent route planning</p>
+            </div>
+
+            <!-- Map Phone -->
+            <div class="showcase-item">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-content">
+                            <div class="phone-header">
+                                <h3><i class="fas fa-map-marked-alt" style="color: var(--emerald-400); margin-right: 6px;"></i>Job Map</h3>
+                            </div>
+                            <div class="map-container">
+                                <div class="map-bg"></div>
+                                <div class="map-roads">
+                                    <div class="map-road h1"></div>
+                                    <div class="map-road h2"></div>
+                                    <div class="map-road h3"></div>
+                                    <div class="map-road v1"></div>
+                                    <div class="map-road v2"></div>
+                                    <div class="map-road v3"></div>
+                                </div>
+                                <!-- Map pins -->
+                                <div class="map-pin completed" style="top: 25%; left: 20%;"></div>
+                                <div class="map-pin completed" style="top: 55%; left: 35%;"></div>
+                                <div class="map-pin current" style="top: 40%; left: 50%;"></div>
+                                <div class="map-pin" style="top: 30%; left: 75%;"></div>
+                                <div class="map-pin" style="top: 65%; left: 65%;"></div>
+                                <div class="map-pin" style="top: 75%; left: 25%;"></div>
+                                <div class="map-pin" style="top: 20%; left: 55%;"></div>
+                                <div class="map-pin" style="top: 80%; left: 80%;"></div>
+                            </div>
+                            <div class="map-legend">
+                                <span class="legend-item"><span class="legend-dot done"></span> Done</span>
+                                <span class="legend-item"><span class="legend-dot current"></span> Current</span>
+                                <span class="legend-item"><span class="legend-dot pending"></span> Pending</span>
+                            </div>
+                            <div class="map-summary">
+                                <div class="map-summary-item">
+                                    <div class="map-summary-value">8</div>
+                                    <div class="map-summary-label">Total Jobs</div>
+                                </div>
+                                <div class="map-summary-item">
+                                    <div class="map-summary-value">2</div>
+                                    <div class="map-summary-label">Complete</div>
+                                </div>
+                                <div class="map-summary-item">
+                                    <div class="map-summary-value">6</div>
+                                    <div class="map-summary-label">Remaining</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Full Map View</h3>
+                <p>See all your jobs pinned on the map at once</p>
+            </div>
+
+            <!-- Planner Phone -->
+            <div class="showcase-item">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <div class="phone-content">
+                            <div class="phone-header">
+                                <h3><i class="fas fa-calendar-week" style="color: var(--emerald-400); margin-right: 6px;"></i>Work Planner</h3>
+                            </div>
+                            <div class="planner-week">
+                                <div class="planner-day">
+                                    <div class="planner-day-name">Mon</div>
+                                    <div class="planner-day-num">12</div>
+                                    <div class="planner-day-jobs">8 jobs</div>
+                                </div>
+                                <div class="planner-day active">
+                                    <div class="planner-day-name">Tue</div>
+                                    <div class="planner-day-num">13</div>
+                                    <div class="planner-day-jobs">12 jobs</div>
+                                </div>
+                                <div class="planner-day">
+                                    <div class="planner-day-name">Wed</div>
+                                    <div class="planner-day-num">14</div>
+                                    <div class="planner-day-jobs">10 jobs</div>
+                                </div>
+                                <div class="planner-day">
+                                    <div class="planner-day-name">Thu</div>
+                                    <div class="planner-day-num">15</div>
+                                    <div class="planner-day-jobs">9 jobs</div>
+                                </div>
+                                <div class="planner-day">
+                                    <div class="planner-day-name">Fri</div>
+                                    <div class="planner-day-num">16</div>
+                                    <div class="planner-day-jobs">11 jobs</div>
+                                </div>
+                            </div>
+                            <div class="time-slots">
+                                <div class="time-slot">
+                                    <div class="time-label">9:00</div>
+                                    <div class="slot-content">
+                                        <div class="slot-job">
+                                            <h5>J. Davidson</h5>
+                                            <p>12 Oak Lane - Full clean</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="time-slot">
+                                    <div class="time-label">10:30</div>
+                                    <div class="slot-content">
+                                        <div class="slot-job">
+                                            <h5>P. Wilson</h5>
+                                            <p>3 Park Avenue - Windows</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="time-slot">
+                                    <div class="time-label">12:00</div>
+                                    <div class="slot-content">
+                                        <div class="slot-job">
+                                            <h5>Commercial - ABC Ltd</h5>
+                                            <p>Unit 5, Business Park</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Work Planner</h3>
+                <p>Plan your week with drag-and-drop scheduling</p>
             </div>
         </div>
     </section>
@@ -1088,35 +1784,35 @@
 
         <div class="industries-grid">
             <div class="industry-card">
-                <div class="industry-icon">🪟</div>
+                <div class="industry-icon">&#x1FAA3;</div>
                 <h4>Window Cleaning</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🚗</div>
+                <div class="industry-icon">&#x1F697;</div>
                 <h4>Car Detailing</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🗑️</div>
+                <div class="industry-icon">&#x1F5D1;</div>
                 <h4>Bin Cleaning</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🔧</div>
+                <div class="industry-icon">&#x1F527;</div>
                 <h4>Plumbers</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">⚡</div>
+                <div class="industry-icon">&#x26A1;</div>
                 <h4>Electricians</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🌿</div>
+                <div class="industry-icon">&#x1F33F;</div>
                 <h4>Gardeners</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🧹</div>
+                <div class="industry-icon">&#x1F9F9;</div>
                 <h4>Cleaners</h4>
             </div>
             <div class="industry-card">
-                <div class="industry-icon">🏠</div>
+                <div class="industry-icon">&#x1F3E0;</div>
                 <h4>Property Services</h4>
             </div>
         </div>
