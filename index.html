@@ -273,6 +273,8 @@
             border-radius: 32px;
             overflow: hidden;
             aspect-ratio: 9/19;
+            display: flex;
+            flex-direction: column;
         }
 
         .phone-notch {
@@ -285,6 +287,14 @@
 
         .phone-content {
             padding: 0 16px 16px;
+        }
+
+        .phone-screenshot {
+            width: 100%;
+            flex: 1;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 0 0 28px 28px;
         }
 
         .phone-header {
@@ -301,6 +311,61 @@
         .phone-header p {
             font-size: 0.75rem;
             color: var(--zinc-500);
+        }
+
+        /* Hero Visual - Browser Frame */
+        .hero-visual {
+            position: relative;
+        }
+
+        .dashboard-preview {
+            background: var(--zinc-800);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5),
+                        0 0 0 1px rgba(255,255,255,0.1);
+        }
+
+        .browser-frame {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--zinc-900);
+            border-bottom: 1px solid var(--zinc-700);
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .browser-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--zinc-600);
+        }
+
+        .browser-dots span:nth-child(1) { background: #ff5f57; }
+        .browser-dots span:nth-child(2) { background: #febc2e; }
+        .browser-dots span:nth-child(3) { background: #28c840; }
+
+        .browser-url {
+            flex: 1;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--zinc-400);
+            background: var(--zinc-800);
+            padding: 6px 16px;
+            border-radius: 6px;
+            margin-right: 60px;
+        }
+
+        .dashboard-img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Hero Phones */
@@ -1326,7 +1391,7 @@
                 <a href="#features">Features</a>
                 <a href="#industries">Industries</a>
                 <a href="#payments">Smart Payments</a>
-                <span class="btn-launch" style="opacity: 0.7; cursor: default;">Coming Soon</span>
+                <a href="https://app.streakfree.app" class="btn-launch">Launch App</a>
             </div>
         </div>
     </nav>
@@ -1348,11 +1413,11 @@
                 </div>
 
                 <div class="hero-cta">
-                    <span class="btn-primary" style="opacity: 0.8; cursor: default;">
-                        Coming Soon <i class="fas fa-clock"></i>
-                    </span>
+                    <a href="https://app.streakfree.app" class="btn-primary">
+                        Start Free Trial <i class="fas fa-arrow-right"></i>
+                    </a>
                     <a href="#showcase" class="btn-secondary">
-                        <i class="fas fa-mobile-screen"></i> See the App
+                        <i class="fas fa-play-circle"></i> See How It Works
                     </a>
                 </div>
             </div>
@@ -1362,42 +1427,7 @@
                 <div class="phone phone-1">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="phone-header">
-                                <h3>Dashboard</h3>
-                                <p>Today's Overview</p>
-                            </div>
-                            <div class="phone-stat-grid">
-                                <div class="phone-stat">
-                                    <div class="phone-stat-value">12</div>
-                                    <div class="phone-stat-label">Jobs Today</div>
-                                </div>
-                                <div class="phone-stat">
-                                    <div class="phone-stat-value">£847</div>
-                                    <div class="phone-stat-label">This Week</div>
-                                </div>
-                            </div>
-                            <div class="phone-card">
-                                <div class="phone-card-header">
-                                    <div class="phone-card-avatar">JD</div>
-                                    <div class="phone-card-info">
-                                        <h4>John Davidson</h4>
-                                        <p>Next: 9:30 AM</p>
-                                    </div>
-                                </div>
-                                <div class="phone-card-amount">£45.00</div>
-                            </div>
-                            <div class="phone-card">
-                                <div class="phone-card-header">
-                                    <div class="phone-card-avatar">SM</div>
-                                    <div class="phone-card-info">
-                                        <h4>Sarah Mitchell</h4>
-                                        <p>Next: 11:00 AM</p>
-                                    </div>
-                                </div>
-                                <div class="phone-card-amount">£65.00</div>
-                            </div>
-                        </div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/2ff01846ac754b3a0cc6dffa116028db912c642d9026c60c096dab04ef9d6685.png" alt="Dashboard" class="phone-screenshot">
                     </div>
                 </div>
 
@@ -1405,47 +1435,7 @@
                 <div class="phone phone-2">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="route-header">
-                                <h3>Today's Route</h3>
-                                <span class="route-badge">OPTIMISED</span>
-                            </div>
-                            <div class="route-stats">
-                                <div class="route-stat">
-                                    <i class="fas fa-route"></i>
-                                    <div class="route-stat-value">23mi</div>
-                                    <div class="route-stat-label">Total</div>
-                                </div>
-                                <div class="route-stat">
-                                    <i class="fas fa-clock"></i>
-                                    <div class="route-stat-value">4.5h</div>
-                                    <div class="route-stat-label">Drive Time</div>
-                                </div>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number completed">1</div>
-                                <div class="stop-info">
-                                    <h4>J. Davidson</h4>
-                                    <p>12 Oak Lane</p>
-                                </div>
-                                <span class="stop-status done">Done</span>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number">2</div>
-                                <div class="stop-info">
-                                    <h4>S. Mitchell</h4>
-                                    <p>45 High Street</p>
-                                </div>
-                                <span class="stop-status next">Next</span>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number">3</div>
-                                <div class="stop-info">
-                                    <h4>R. Thompson</h4>
-                                    <p>8 Church Road</p>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/9636f6d68cb12c81d4ef4c108c32c4d2fc9874479d96a143cdc2ca70519c6129.png" alt="Route" class="phone-screenshot">
                     </div>
                 </div>
             </div>
@@ -1466,57 +1456,23 @@
                 <div class="phone">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="phone-header">
-                                <h3><i class="fas fa-home" style="color: var(--emerald-400); margin-right: 6px;"></i>Dashboard</h3>
-                            </div>
-                            <div class="dashboard-stats">
-                                <div class="dash-stat">
-                                    <div class="dash-stat-value">674</div>
-                                    <div class="dash-stat-label">Regular Customers</div>
-                                </div>
-                                <div class="dash-stat secondary">
-                                    <div class="dash-stat-value">8</div>
-                                    <div class="dash-stat-label">Added This Week</div>
-                                </div>
-                                <div class="dash-stat secondary">
-                                    <div class="dash-stat-value">12</div>
-                                    <div class="dash-stat-label">Jobs Today</div>
-                                </div>
-                                <div class="dash-stat" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
-                                    <div class="dash-stat-value">3</div>
-                                    <div class="dash-stat-label">Facebook Leads</div>
-                                </div>
-                            </div>
-                            <div class="dashboard-stats" style="margin-top: 8px;">
-                                <div class="dash-stat" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                                    <div class="dash-stat-value">£380</div>
-                                    <div class="dash-stat-label">Customers Owing</div>
-                                </div>
-                                <div class="dash-stat">
-                                    <div class="dash-stat-value">£2,022</div>
-                                    <div class="dash-stat-label">This Week</div>
-                                </div>
-                            </div>
-                            <div class="quick-actions">
-                                <div class="quick-action">
-                                    <i class="fas fa-plus"></i>
-                                    <span>New Job</span>
-                                </div>
-                                <div class="quick-action">
-                                    <i class="fas fa-user-plus"></i>
-                                    <span>Customer</span>
-                                </div>
-                                <div class="quick-action">
-                                    <i class="fab fa-facebook"></i>
-                                    <span>Leads</span>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/2ff01846ac754b3a0cc6dffa116028db912c642d9026c60c096dab04ef9d6685.png" alt="Dashboard" class="phone-screenshot">
                     </div>
                 </div>
-                <h3>Home Dashboard</h3>
+                <h3>Business Dashboard</h3>
                 <p>Customers, leads, owing & earnings at a glance</p>
+            </div>
+
+            <!-- Work Planner Phone -->
+            <div class="showcase-item">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="phone-notch"></div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/70f481916efc51287488935afe56034a7c9cb1e75e0aec67a0e17fac6e06ffbc.png" alt="Work Planner" class="phone-screenshot">
+                    </div>
+                </div>
+                <h3>Work Planner</h3>
+                <p>Plan your week with drag-and-drop scheduling</p>
             </div>
 
             <!-- Route Phone -->
@@ -1524,191 +1480,23 @@
                 <div class="phone">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="route-header">
-                                <h3><i class="fas fa-route" style="color: var(--emerald-400); margin-right: 6px;"></i>Route</h3>
-                                <span class="route-badge">OPTIMISED</span>
-                            </div>
-                            <div class="route-stats">
-                                <div class="route-stat">
-                                    <i class="fas fa-road"></i>
-                                    <div class="route-stat-value">23mi</div>
-                                    <div class="route-stat-label">Distance</div>
-                                </div>
-                                <div class="route-stat">
-                                    <i class="fas fa-clock"></i>
-                                    <div class="route-stat-value">52min</div>
-                                    <div class="route-stat-label">Drive</div>
-                                </div>
-                                <div class="route-stat">
-                                    <i class="fas fa-gas-pump"></i>
-                                    <div class="route-stat-value">£8.40</div>
-                                    <div class="route-stat-label">Fuel</div>
-                                </div>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number completed">1</div>
-                                <div class="stop-info">
-                                    <h4>J. Davidson</h4>
-                                    <p>12 Oak Lane</p>
-                                </div>
-                                <span class="stop-status done"><i class="fas fa-check"></i></span>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number completed">2</div>
-                                <div class="stop-info">
-                                    <h4>P. Wilson</h4>
-                                    <p>3 Park Ave</p>
-                                </div>
-                                <span class="stop-status done"><i class="fas fa-check"></i></span>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number">3</div>
-                                <div class="stop-info">
-                                    <h4>S. Mitchell</h4>
-                                    <p>45 High St</p>
-                                </div>
-                                <span class="stop-status next">NEXT</span>
-                            </div>
-                            <div class="route-stop">
-                                <div class="stop-number">4</div>
-                                <div class="stop-info">
-                                    <h4>R. Thompson</h4>
-                                    <p>8 Church Rd</p>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/9636f6d68cb12c81d4ef4c108c32c4d2fc9874479d96a143cdc2ca70519c6129.png" alt="Route Optimisation" class="phone-screenshot">
                     </div>
                 </div>
-                <h3>Optimised Routes</h3>
-                <p>Save fuel and time with intelligent route planning</p>
+                <h3>Route Optimisation</h3>
+                <p>Save fuel and time with intelligent routing</p>
             </div>
 
-            <!-- Map Phone -->
+            <!-- Payments Phone -->
             <div class="showcase-item">
                 <div class="phone">
                     <div class="phone-screen">
                         <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="phone-header">
-                                <h3><i class="fas fa-map-marked-alt" style="color: var(--emerald-400); margin-right: 6px;"></i>Job Map</h3>
-                            </div>
-                            <div class="map-container">
-                                <div class="map-bg"></div>
-                                <div class="map-roads">
-                                    <div class="map-road h1"></div>
-                                    <div class="map-road h2"></div>
-                                    <div class="map-road h3"></div>
-                                    <div class="map-road v1"></div>
-                                    <div class="map-road v2"></div>
-                                    <div class="map-road v3"></div>
-                                </div>
-                                <!-- Map pins -->
-                                <div class="map-pin completed" style="top: 25%; left: 20%;"></div>
-                                <div class="map-pin completed" style="top: 55%; left: 35%;"></div>
-                                <div class="map-pin current" style="top: 40%; left: 50%;"></div>
-                                <div class="map-pin" style="top: 30%; left: 75%;"></div>
-                                <div class="map-pin" style="top: 65%; left: 65%;"></div>
-                                <div class="map-pin" style="top: 75%; left: 25%;"></div>
-                                <div class="map-pin" style="top: 20%; left: 55%;"></div>
-                                <div class="map-pin" style="top: 80%; left: 80%;"></div>
-                            </div>
-                            <div class="map-legend">
-                                <span class="legend-item"><span class="legend-dot done"></span> Done</span>
-                                <span class="legend-item"><span class="legend-dot current"></span> Current</span>
-                                <span class="legend-item"><span class="legend-dot pending"></span> Pending</span>
-                            </div>
-                            <div class="map-summary">
-                                <div class="map-summary-item">
-                                    <div class="map-summary-value">8</div>
-                                    <div class="map-summary-label">Total Jobs</div>
-                                </div>
-                                <div class="map-summary-item">
-                                    <div class="map-summary-value">2</div>
-                                    <div class="map-summary-label">Complete</div>
-                                </div>
-                                <div class="map-summary-item">
-                                    <div class="map-summary-value">6</div>
-                                    <div class="map-summary-label">Remaining</div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="https://static.prod-images.emergentagent.com/jobs/cf20e757-7f5a-49c4-9afe-3f313f02ac7a/images/ce30ff59dc0fdc00d369f73a157a59b890bdcfc61976983552c5fec78b2fb77d.png" alt="Payment Tracking" class="phone-screenshot">
                     </div>
                 </div>
-                <h3>Full Map View</h3>
-                <p>See all your jobs pinned on the map at once</p>
-            </div>
-
-            <!-- Planner Phone -->
-            <div class="showcase-item">
-                <div class="phone">
-                    <div class="phone-screen">
-                        <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="phone-header">
-                                <h3><i class="fas fa-calendar-week" style="color: var(--emerald-400); margin-right: 6px;"></i>Work Planner</h3>
-                            </div>
-                            <div class="planner-week">
-                                <div class="planner-day">
-                                    <div class="planner-day-name">Mon</div>
-                                    <div class="planner-day-num">12</div>
-                                    <div class="planner-day-jobs">8 jobs</div>
-                                </div>
-                                <div class="planner-day active">
-                                    <div class="planner-day-name">Tue</div>
-                                    <div class="planner-day-num">13</div>
-                                    <div class="planner-day-jobs">12 jobs</div>
-                                </div>
-                                <div class="planner-day">
-                                    <div class="planner-day-name">Wed</div>
-                                    <div class="planner-day-num">14</div>
-                                    <div class="planner-day-jobs">10 jobs</div>
-                                </div>
-                                <div class="planner-day">
-                                    <div class="planner-day-name">Thu</div>
-                                    <div class="planner-day-num">15</div>
-                                    <div class="planner-day-jobs">9 jobs</div>
-                                </div>
-                                <div class="planner-day">
-                                    <div class="planner-day-name">Fri</div>
-                                    <div class="planner-day-num">16</div>
-                                    <div class="planner-day-jobs">11 jobs</div>
-                                </div>
-                            </div>
-                            <div class="time-slots">
-                                <div class="time-slot">
-                                    <div class="time-label">9:00</div>
-                                    <div class="slot-content">
-                                        <div class="slot-job">
-                                            <h5>J. Davidson</h5>
-                                            <p>12 Oak Lane - Full clean</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="time-slot">
-                                    <div class="time-label">10:30</div>
-                                    <div class="slot-content">
-                                        <div class="slot-job">
-                                            <h5>P. Wilson</h5>
-                                            <p>3 Park Avenue - Windows</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="time-slot">
-                                    <div class="time-label">12:00</div>
-                                    <div class="slot-content">
-                                        <div class="slot-job">
-                                            <h5>Commercial - ABC Ltd</h5>
-                                            <p>Unit 5, Business Park</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3>Work Planner</h3>
-                <p>Plan your week with drag-and-drop scheduling</p>
+                <h3>Smart Payments</h3>
+                <p>Auto-match bank payments to customers</p>
             </div>
         </div>
     </section>
